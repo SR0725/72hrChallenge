@@ -1,0 +1,213 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Forty by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script language="JavaScript">
+		function ShowTime(){
+			var NowDate=new Date();
+			var d=NowDate.getDate();
+			var h=NowDate.getHours();
+			var m=NowDate.getMinutes();
+			var s=NowDate.getSeconds();　
+			if(((d == 18 && h > 11) || d > 19) && ((d == 21 && h < 12) || d > 22)){
+				document.getElementById('timebox').innerHTML = '活動已經結束<br>請等待結果整理';
+			}else{
+				if(h < 12){
+					d = 18-d;
+					h = 11-h;
+				}
+				else{
+					d = 17-d;
+					h = 12+(23-h);
+				}
+				m = 59-m;
+				s = 59-s;
+				document.getElementById('timebox').innerHTML = '活動即將開始<br>活動開始倒數：'+d +'天'+h+'時'+m+'分'+s+'秒';
+			}
+			setTimeout('ShowTime()',1000);
+		}
+		</script>
+	</head>
+	<body class="is-preload" onload="ShowTime()">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<a href="index.html" class="logo"><strong>Minecraft</strong> <span>72hrChallenge</span></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="landing.html">Landing</a></li>
+							<li><a href="generic.html">Generic</a></li>
+							<li><a href="elements.html">Elements</a></li>
+						</ul>
+						<ul class="actions stacked">
+							<li><a href="#" class="button primary fit">Get Started</a></li>
+							<li><a href="#" class="button fit">Log In</a></li>
+						</ul>
+					</nav>
+
+				<!-- Banner -->
+					<section id="banner" class="major">
+						<div class="inner">
+							<header class="major">
+								<h1>72小時開發挑戰 </h1>
+							</header>
+							<div class="content">
+								<p>創作，可以是文靜的紙上遊戲<br />
+								也可以是野蠻的靈魂激盪</p>
+								<ul class="actions">
+									<li><a href="#one" class="button next scrolly">了解更多</a></li>
+								</ul>
+								<p>
+									<div id="timebox"></div>
+								</p>
+							</div>
+						</div>
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- One -->
+							<section id="one" class="tiles">
+								<article>
+									<span class="image">
+										<img src="images/1.jpg" alt="" />
+									</span>
+									<header class="major">
+										<h3><a href="aboutme.html" class="link">文藝的切磋</a></h3>
+										<p>是文語繽紛的色彩<br>關於我們 <</p>
+									</header>
+								</article>
+								<article>
+									<span class="image">
+										<img src="images/2.jpg" alt="" />
+									</span>
+									<header class="major">
+										<h3><a href="info.html" class="link">武藝的藝弄</a></h3>
+										<p>是字節程式的光芒<br>查看活動資訊 <</p>
+									</header>
+								</article>
+								<article><a href="#contact" class="next scrolly">
+									<span class="image">
+										<img src="images/3.jpg" alt="" />
+									</span>
+									<header class="major">
+										<h3>舞動靈魂的序章</h3>
+										<p>一磚一瓦築起夢想之城<br>查看活動開始時間 <</p>
+									</header></a>
+								</article>
+								<article>
+									<span class="image">
+										<img src="images/4.jpg" alt="" />
+									</span>
+									<header class="major">
+										<h3><a href="noinfo.html" class="link">揭開星河的續幕</a></h3>
+										<p>現在讓我們齊聚一堂<br>查看活動紀錄 <</p>
+									</header>
+								</article>
+								<article>
+									<span class="image">
+										<img src="images/5.jpg" alt="" />
+									</span>
+									<header class="major">
+										<h3><a href="  " class="link">３天的藝術激盪</a></h3>
+										<p>剎那之間創意激盪<br>報名或上傳檔案 <</p>
+									</header>
+								</article>
+								<article>
+									<span class="image">
+										<img src="images/6.jpg" alt="" />
+									</span>
+									<header class="major">
+										<h3><a href="noinfo.html" class="link">7天的準備時間</a></h3>
+										<p>從公佈到比賽開始，你有一個禮拜的時間準備<br>查看其他參賽作品 <</p>
+									</header>
+								</article>
+							</section>
+
+						<!-- Two -->
+							<section id="two">
+								<div class="inner">
+									<header class="major">
+										<h2>意願調查</h2>
+									</header>
+									<p>距離活動開始尚有一個星期，但在這裡進行意願調查</p>
+									<ul class="actions">
+										<li><a href="landing.html" class="button next">有參加意願嗎？</a></li>
+									</ul>
+								</div>
+							</section>
+
+					</div>
+
+				<!-- Contact -->
+					<section id="contact">
+						<div class="inner">
+							<section>
+								<span class="image">
+									<img src="images/5.jpg" alt="" />
+								</span>
+
+							</section>
+							<section class="split">
+								<section>
+									<div class="contact-method">
+										<span class="icon solid alt fa-envelope"></span>
+										<h3>Email</h3>
+										<span>contact@ray-dreamer.cf2387</span>
+									</div>
+								</section>
+								<section>
+									<div class="contact-method">
+										<span class="icon solid alt fa-bullhorn"></span>
+										<h3>Discord</h3>
+										<a href="https://discord.gg/MYGRDASgYr">https://discord.gg/MYGRDASgYr</a>
+									</div>
+								</section>
+								<section>
+									<div class="contact-method">
+										<span class="icon solid alt fa-home"></span>
+										<h3>Time</h3>
+										<span>2021年 6月 18日 12：00  公佈題目<br>2021年 6月 21日 12：00  停止接受作品</span>
+									</div>
+								</section>
+							</section>
+						</div>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="copyright">
+								<li>&copy; 睿.Ray</li><li>經營活動</li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
