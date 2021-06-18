@@ -30,8 +30,21 @@
 			var h=NowDate.getHours();
 			var m=NowDate.getMinutes();
 			var s=NowDate.getSeconds();　
-			if(((d == 18 && h > 11) || d > 19) && ((d == 21 && h < 12) || d > 22)){
-				document.getElementById('timebox').innerHTML = '活動已經結束<br>請等待結果整理';
+			if((d == 21 && h > 11) || (d > 21)){
+				document.getElementById('timebox').innerHTML = '活動已經結束了';
+			}else if(((d == 18 && h > 11) || d > 18) && ((d == 21 && h < 12) || d < 21)){
+				if(h < 12){
+					d = 21-d;
+					h = 11-h;
+				}
+				else{
+					d = 20-d;
+					h = 12+(23-h);
+				}
+				m = 59-m;
+				s = 59-s;
+				document.getElementById('timebox').innerHTML = '活動已經開始<br>活動結束倒數：'+d +'天'+h+'時'+m+'分'+s+'秒';
+				document.getElementById('gamebox').innerHTML = '活動已經開始<br>活動結束倒數：'+d +'天'+h+'時'+m+'分'+s+'秒';
 			}else{
 				if(h < 12){
 					d = 18-d;
@@ -44,13 +57,66 @@
 				m = 59-m;
 				s = 59-s;
 				document.getElementById('timebox').innerHTML = '活動即將開始<br>活動開始倒數：'+d +'天'+h+'時'+m+'分'+s+'秒';
+				document.getElementById('gamebox').innerHTML = '活動即將開始<br>活動開始倒數：'+d +'天'+h+'時'+m+'分'+s+'秒';
 			}
 			setTimeout('ShowTime()',1000);
 		}
 		</script>
+		<link rel="stylesheet" href="jquery/jquery-ui.css">
+	  <script src="jquery/external/jquery/jquery.js"></script>
+	  <script src="jquery/jquery-ui.js"></script>
+	  <link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css">
+		<script>
+		  $(function() {
+				var y = 0.7*window.innerHeight;
+				var x = 0.7*window.innerWidth;;
+		    $( "#dialog-modal" ).dialog({
+		      height: y,
+					width: x,
+		      modal: true
+		    });
+		  });
+  	</script>
 	</head>
 	<body class="is-preload" onload="ShowTime()">
 
+		<div id="dialog-modal" title="題目公佈">
+		  <p><section id="contact">
+				<section class="split">
+					<p>
+					從現在開始，你有三天的時間能完成作品<br>
+						本次活動題目共有三題，三選一你有興趣的即可（這不是比賽，所以出題範圍非常廣）<br>
+						（一個人或團隊請就交出一張作品就好，不要刷地圖導致我方審理困難）<br><br>
+					</p>
+					<section>
+						<div class="contact-method">
+							<span class="icon solid alt fa-dice-one"></span>
+							<span>題目一　請設計與"科幻"風格有關的作品<br><br>　說明：上從星際大戰到微科幻的刀劍神域都脫離不了我們對外來的想像<br>從充滿銀河擴張風格的星艦到簡單的衛星發射<br>太空站失事的意外或槍戰PVP<br><br></span>
+						</div>
+					</section>
+					<section>
+						<div class="contact-method">
+							<span class="icon solid alt fa-dice-two"></span>
+							<span>					題目二　請設計與"瘟疫"風格有關的作品<br><br>說明：十四世紀 ,歐洲史上最黑暗的一天，鳥嘴醫生緩緩行走由屍體堆出的城鎮中<br>又或者是第一次世界大戰逼退英德軍隊的西班牙流感<br>或現在的新冠肺炎疫情<br><br></span>
+						</div>
+					</section>
+					<section>
+						<div class="contact-method">
+							<span class="icon solid alt fa-dice-three"></span>
+							<span>					題目三　請設計與"魔幻"風格有關的作品<br><br>　說明：劍與魔法的世界，阿比人的天地，中國傳統神話<br>不論是東西方能提出的魔幻劇情太多了<br>構築你的魔幻大陸吧！<br><br></span>
+						</div>
+					</section>
+					<section>
+						<div class="contact-method">
+							<span class="icon solid alt fa-bullhorn"></span>
+							請務必來此Discord群組，任何活動爭議跟宣辦都在此群組進行！！
+							<a href="https://discord.gg/MYGRDASgYr">https://discord.gg/MYGRDASgYr</a>
+						</div>
+					</section>
+					<div id="gamebox"></div>
+				</section>
+			</section>
+		</div>
 		<!-- Wrapper -->
 			<div id="wrapper">
 
@@ -222,7 +288,7 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
+			<!--<script src="assets/js/jquery.min.js"></script>-->
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
